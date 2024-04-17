@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Models\Aluno;
 use App\Models\Curso;
+use App\Models\Professor;
+use App\Models\Materia;
 
 class CursoController extends Controller
 {

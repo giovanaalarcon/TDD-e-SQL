@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::table('materias', function (Blueprint $table) {
             $table->foreignId('curso_id')->constrained();
+            $table->foreignId('professor_id')->constrained('professores');
         });
     }
 
@@ -26,9 +27,8 @@ return new class extends Migration
     public function down()
     {
         Schema::table('materias', function (Blueprint $table) {
-            $table->foreignId('curso_id')
-            ->constrained()
-            ->onDelete('cascade');
+            $table->dropForeign(['curso_id']);
+            $table->dropForeign(['professor_id']);
         });
     }
 };

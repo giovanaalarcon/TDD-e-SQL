@@ -25,18 +25,18 @@ SET time_zone = "+00:00";
 -- Extraindo dados da tabela `courses`
 --
 
-insert into materias(codigo, nome, curso_id) 
+insert into materias(codigo, nome, curso_id, professor_id) 
 values 
-	('P0120', 'Calculo_1', 2),
-    ('P0121', 'Desenho_Grafico', 2),
-    ('P0122', 'Fisica', 4),
-    ('P0123', 'Mecanica dos Solidos', 4),
-    ('P0124', 'Python', 3),
-    ('P0125', 'Javascript', 3),
-    ('P0126', 'Economia', 1),
-    ('P0127', 'Empreendedorismo', 1),
-    ('P0128', 'Marketing', 1),
-    ('P0129', 'Aplicativos', 5);
+	('P0120', 'Calculo_1', 2, 1),
+    ('P0121', 'Desenho_Grafico', 2, 1),
+    ('P0122', 'Fisica', 4, 2),
+    ('P0123', 'Mecanica dos Solidos', 4, 3),
+    ('P0124', 'Python', 3, 4),
+    ('P0125', 'Javascript', 3, 4),
+    ('P0126', 'Economia', 1, 5),
+    ('P0127', 'Empreendedorismo', 1, 6),
+    ('P0128', 'Marketing', 1, 6),
+    ('P0129', 'Aplicativos', 5, 7);
 commit;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

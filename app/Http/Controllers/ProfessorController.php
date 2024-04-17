@@ -9,7 +9,7 @@ use App\Models\Curso;
 use App\Models\Professor;
 use App\Models\Materia;
 
-class AlunoController extends Controller
+class ProfessorController extends Controller
 {
     //
 }
