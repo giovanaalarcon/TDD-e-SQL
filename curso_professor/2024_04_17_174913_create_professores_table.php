@@ -14,7 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('professores', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');;
+            $table->string('nome');
+            $table->string('RP');
+            $table->integer('tempo_casa');
             $table->timestamps();
         });
     }
