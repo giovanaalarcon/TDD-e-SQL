@@ -16,7 +16,7 @@ class CursoController extends Controller
     | Funcao index
     |--------------------------------------------------------------------------
     |
-    | Funcao utilizada para retornar os Cursos para a view
+    | Funcao utilizada para retornar tudo para a view
     |
     */
 
@@ -24,9 +24,11 @@ class CursoController extends Controller
         
         $cursos = Curso::all();
         $alunos = Aluno::all();
+        $materias = Materia::all();
+        $professores = Professor::all();
         
 
-        return view('welcome',['cursos' => $cursos,'alunos' => $alunos]);
+        return view('welcome',['cursos' => $cursos,'alunos' => $alunos,'materias' => $materias,'professores' => $professores]);
     }
 
 
@@ -65,7 +67,7 @@ class CursoController extends Controller
 
         $curso->save();
 
-        return back()->with('msg', 'Informacoes do curso atualizados com sucesso!');;
+        return back()->with('msg', 'Informacoes do curso atualizados com sucesso!');
     }
 
 }

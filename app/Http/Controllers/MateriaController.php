@@ -17,8 +17,8 @@ class MateriaController extends Controller
     | Funcao show
     |--------------------------------------------------------------------------
     |
-    | Funcao utilizada para fazer um relacionamento One to Many entre Curso
-    | e Alunos
+    | Funcao utilizada para fazer um relacionamento One to Many entre Professor
+    | e Materias
     |
     */
 
@@ -50,6 +50,6 @@ class MateriaController extends Controller
         */
         $materia->delete();
         
-        return redirect()->back();
+        return redirect()->back()->with('del', 'Materia deletada com sucesso!');
     }
 }

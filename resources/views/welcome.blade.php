@@ -18,7 +18,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="h2 pb-3 mb-4 text-dark border-bottom border-2 border-dark">Cursos de Informática</div>
+    <div class="h2 pb-3 mb-4 text-dark border-bottom border-2 border-dark">Banco de Dados Universidade</div>
+
+    @if(session('del'))
+        <div class="alert alert-success">
+            {{ session('del') }}
+        </div>
+    @endif
 
     <div class="row row-cols-1 row-cols-md-4 g-4">
         @foreach($cursos as $curso)
@@ -35,6 +41,37 @@
         @endforeach 
     </div>
 
+    <div class="h2 pb-3 mb-4 text-dark border-bottom border-2 border-dark">Materias</div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">CODIGO</th>
+                <th scope="col">NOME</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            @foreach($materias as $materia)
+            <tr>
+                <td>{{ $materia->codigo }}</td>
+                <td>{{ $materia->nome }}</td>
+                <td>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <form action="/materia/delete/{{ $materia->id }}" method="POST">
+                        @csrf
+                        @method("DELETE")
+                        <button type="submit" class="btn btn-danger delete-btn">
+                            Deletar Materia
+                        </button>
+                    </form>
+                </div>
+                </td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+
     
 
 
@@ -44,13 +81,16 @@
         <thead>
             <tr>
                 <th scope="col">NOME</th>
-                <th scope="col"></th>
+                <th scope="col">RA</th>
+                <th scope="col">IDADE</th>
             </tr>
         </thead>
         <tbody class="table-group-divider">
             @foreach($alunos as $aluno)
             <tr>
                 <td>{{ $aluno->nome }}</td>
+                <td>{{ $aluno->RA }}</td>
+                <td>{{ $aluno->idade }}</td>
                 <td>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                     
@@ -60,6 +100,7 @@
             @endforeach
         </tbody>
     </table>
+
 </body>
 
 </html>

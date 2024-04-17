@@ -9,7 +9,7 @@ class Materia extends Model
 {
     use HasFactory;
 
-    protected $table = 'alunos';
+    protected $table = 'materias';
     protected $fillable = ['codigo', 'nome', 'curso_id', 'professor_id'];
 
     //Relacionamento One (professor) to Many (materias)
