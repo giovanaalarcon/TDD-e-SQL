@@ -6,6 +6,7 @@ Usando suas tabelas já criadas no projeto "Banco-de-Dados-MySQL---Apresentacao-
 - Inserir professores;
 - Atualizar informações dos cursos;
 - Deletar Matérias;
+
 Todas a tabelas, relacionamentos e comandos acima foram desenvolvidos no framework Laravel
 
 #### Acesse o projeto
