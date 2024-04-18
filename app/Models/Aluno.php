@@ -17,4 +17,9 @@ class Aluno extends Model
         return $this->belongsTo(Curso::class, foreignKey: 'curso_id', ownerKey: 'id');
     }
 
+     //Relacionamento Many to Many
+     public function professores(){
+        return $this->belongsToMany(Professor::class, 'alunos_professores', 'id_aluno', 'id_professor');
+    }
+
 }

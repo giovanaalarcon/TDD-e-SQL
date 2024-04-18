@@ -40,5 +40,30 @@ class AlunoController extends Controller
         return view('pesquisarAluno', compact('aluno', 'curso', 'materias', 'professores'));
     }
 
+    public function createProfessor()
+    {
+        return view('create');
+    }
+    
+    public function storeProfessor(Request $request)
+    {
+        // Valide os dados do formulário
+        $request->validate([
+            'nome' => 'required|string|max:255',
+            // Adicione outras regras de validação conforme necessário
+        ]);
+    
+        // Crie um novo professor
+        $professor = new Professor();
+        $professor->nome = $request->nome;
+        $professor->RP = $request->RP; // Substitua 'valor válido' pelo valor adequado
+        $professor->tempo_casa = $request->tempo_casa;
+        $professor->curso_id = $request->curso_id;
+        $professor->save();
+
+    
+        return redirect()->route('create_professor')->with('success', 'Professor criado com sucesso.');
+    }
+
 
 }

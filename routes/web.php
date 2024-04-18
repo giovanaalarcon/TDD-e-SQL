@@ -31,3 +31,10 @@ Route::delete('/materia/delete/{id}', [MateriaController::class, 'deleteMateria'
 
 Route::get('/pesquisarAluno', [AlunoController::class, 'pesquisaAluno_form']);
 Route::post('/pesquisarAluno', [AlunoController::class, 'pesquisaAluno']);
+
+
+Route::get('/aluno/{aluno}', [AlunoController::class, 'show']);
+
+//inserir professor
+Route::get('/professor/create', [AlunoController::class, 'createProfessor'])->name('create_professor');
+Route::post('/professor/store', [AlunoController::class, 'storeProfessor'])->name('store_professor');

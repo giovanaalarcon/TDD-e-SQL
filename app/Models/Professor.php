@@ -22,4 +22,9 @@ class Professor extends Model
         return $this->hasMany(Professor::class, foreignKey: 'curso_id', localKey: 'id');
     }
 
+   // Relacionamento Many (alunos) to Many (professores)
+   public function alunos(){
+    return $this->belongsToMany(Aluno::class, 'alunos_professores', 'id_professor', 'id_aluno');
+    }
+
 }

@@ -44,6 +44,11 @@
     <div class="h2 pb-3 mb-4 text-dark border-bottom border-2 border-dark">Alunos Matriculados</div>
     <a href="/pesquisarAluno" class="btn btn-primary">Pesquise o Aluno</a>
 
+    <div class="h2 pb-3 mb-4 text-dark border-bottom border-2 border-dark">Inserir Professor</div>
+    <div>
+    <a href="/professor/create/" class="btn btn-primary">Inserir professor</a>
+    </div>
+
     <div class="h2 pb-3 mb-4 text-dark border-bottom border-2 border-dark">Materias</div>
 
     <table class="table table-striped">
@@ -70,6 +75,28 @@
                     </form>
                 </div>
                 </td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+
+    <div class="h2 pb-3 mb-4 text-dark border-bottom border-2 border-dark">Professores</div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">CODIGO</th>
+                <th scope="col">NOME</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            @foreach($professores as $professor)
+            <tr>
+                <td>{{ $professor->nome }}</td>
+                <td>{{ $professor->RP }}</td>
+                <td>{{ $professor->tempo_casa }}</td>
+                
             </tr>
             @endforeach
         </tbody>
