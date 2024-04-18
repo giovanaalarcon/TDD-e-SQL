@@ -12,9 +12,9 @@ class Professor extends Model
     protected $table = 'professores';
     protected $fillable = ['nome', 'RP', 'tempo_casa', 'curso_id'];
 
-    //Relacionamento One (professor) to Many (materias)
-    public function materias(){
-        return $this->hasMany(Materia::class, foreignKey: 'professor_id', localKey: 'id');
+    //Relacionamento One (curso) to Many (professores)
+    public function curso() {
+        return $this->belongsTo(Curso::class, foreignKey: 'curso_id', ownerKey: 'id');
     }
 
 }
