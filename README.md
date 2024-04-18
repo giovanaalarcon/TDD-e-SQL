@@ -1,27 +1,81 @@
-# TDD-e-SQL
 
-## Descrição do Projeto
-Usando suas tabelas já criadas no projeto "Banco-de-Dados-MySQL---Apresentacao-5" para: Alunso, Professores, Matérias e Cursos, foram desenvolvidos os seguintes comandos para:
-- Selecionar alunos;
-- Inserir professores;
-- Atualizar informações dos cursos;
-- Deletar Matérias;
+# Laravel Template
 
-Todas a tabelas, relacionamentos e comandos acima foram desenvolvidos no framework Laravel
+### Passo a passo
+Clone Repositório criado a partir do template, entre na pasta e execute os comandos abaixo:
 
-### Acessos ao Projeto 
+Crie o Arquivo .env
+```sh
+cp .env.example .env
+```
 
-- Acesse o projeto
+
+Atualize as variáveis de ambiente do arquivo .env
+```dosini
+APP_NAME=Laravel
+APP_URL=http://localhost:8080
+
+DB_PASSWORD=root
+```
+
+
+Suba os containers do projeto
+```sh
+docker compose up -d
+```
+
+
+Acessar o container
+```sh
+docker compose exec app bash
+```
+
+
+Instalar as dependências do projeto
+```sh
+composer install
+```
+
+
+Gerar a key do projeto Laravel
+```sh
+php artisan key:generate
+```
+
+
+Acesse o projeto
 [http://localhost:8080](http://localhost:8080)
 
-- Acesse o phpmyadmin
+Acesse o phpmyadmin
 [http://localhost:8081](http://localhost:8081)
 
-- Acesse as tabelas MySQL pré-existente na pasta: .MySQL
+API de categorias e filmes:
+https://www.learn-laravel.cf/
 
-### Pessoas Desenvolvedoras: 
-- Beatriz Cupa Newman
-- Daniela Akemi Hayashi
-- Flávia Cristina Medeiros
-- Giovana Salazar Alarcon
-- Luana Bresciani Baptista
+Rotas:
+- (get) /categories
+- (get) /category/{id}
+- (get) /movies
+- (get) /movie/{id}
+
+### Como realizar requisições HTTP get:
+Adicionar no arquivo web.php e acesse a rota [http://localhost:8080/requisicao](http://localhost:8080/requisicao)
+```php
+Route::get('/requisicao', function () {
+    $json = \Illuminate\Support\Facades\Http::get('https://learn-laravel.cf/movie/1')->body();
+    dd($json);
+});
+```
+Em caso de sucesso irá aparecer a mensagem (em linha única sem formatação):
+```json
+{
+    "id": 1,
+    "name": "Zack and Miri Make a Porno",
+    "category_id": 6,
+}
+```
+
+### Como criar tela de login no Laravel (ATENÇÃO LER DESCERIÇÃO DOS VIDEOS):
+
+- Criação login sem node: [https://youtu.be/V2s2toQNMG0](https://youtu.be/V2s2toQNMG0)
+- Criação login com node: [https://youtu.be/UhOYeYoK3Bc](https://youtu.be/UhOYeYoK3Bc)
