@@ -41,6 +41,9 @@
         @endforeach 
     </div>
 
+    <div class="h2 pb-3 mb-4 text-dark border-bottom border-2 border-dark">Alunos Matriculados</div>
+    <a href="/pesquisarAluno" class="btn btn-primary">Pesquise o Aluno</a>
+
     <div class="h2 pb-3 mb-4 text-dark border-bottom border-2 border-dark">Materias</div>
 
     <table class="table table-striped">
@@ -65,35 +68,6 @@
                             Deletar Materia
                         </button>
                     </form>
-                </div>
-                </td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
-
-    
-
-
-    <div class="h2 pb-3 mb-4 text-dark border-bottom border-2 border-dark">Alunos Matriculados</div>
-
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th scope="col">NOME</th>
-                <th scope="col">RA</th>
-                <th scope="col">IDADE</th>
-            </tr>
-        </thead>
-        <tbody class="table-group-divider">
-            @foreach($alunos as $aluno)
-            <tr>
-                <td>{{ $aluno->nome }}</td>
-                <td>{{ $aluno->RA }}</td>
-                <td>{{ $aluno->idade }}</td>
-                <td>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    
                 </div>
                 </td>
             </tr>

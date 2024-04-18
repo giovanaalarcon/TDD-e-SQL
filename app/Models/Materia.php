@@ -17,4 +17,9 @@ class Materia extends Model
         return $this->belongsTo(Professor::class, foreignKey: 'professor_id', ownerKey: 'id');
     }
 
+    //Relacionamento One (curso) to Many (materias)
+    public function curso() {
+        return $this->belongsTo(Materia::class, foreignKey: 'curso_id', ownerKey: 'id');
+    }
+
 }

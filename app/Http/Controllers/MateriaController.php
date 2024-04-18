@@ -24,10 +24,10 @@ class MateriaController extends Controller
 
     public function show($id){
 
-        $professor = Professor::where('id', $id)->first();
-        $materias = $professor?->materias()->get();
-
-        return view('professor', compact('professor', 'materias'));
+        public function show(Materia $materia){
+            $curso = $materia->curso()->first();
+            return view('', compact('curso', 'materia'));
+        }
     }
 
     /*
@@ -40,14 +40,8 @@ class MateriaController extends Controller
     */
     public function deleteMateria($id){
 
-        //$alunos = Aluno::all();
-        
         $materia = Materia::where('id', $id)->first();
-        /* 
-        foreach($alunos as $aluno){
-            $aluno->materia()->detach($id);
-        }
-        */
+    
         $materia->delete();
         
         return redirect()->back()->with('del', 'Materia deletada com sucesso!');
