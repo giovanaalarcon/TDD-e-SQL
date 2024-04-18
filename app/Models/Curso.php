@@ -12,7 +12,7 @@ class Curso extends Model
     protected $table = 'cursos';
     protected $fillable = ['nome', 'codigo'];
 
-    //Relacionamento One (curso) to Many (alunos)
+    //Relacionamento One (curso) to Many (professores)
     public function professores(){
         return $this->hasMany(Professor::class, foreignKey: 'curso_id', localKey: 'id');
     }
