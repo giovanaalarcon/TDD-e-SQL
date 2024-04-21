@@ -27,7 +27,7 @@ Route::get('curso/editar/{curso}', [CursoController::class, 'formEditCurso'])->n
 Route::put('curso/edit/{curso}', [CursoController::class, 'edit'])->name('curso.edit.do');
 
 //Rota para deletar
-Route::delete('/materia/delete/{id}', [MateriaController::class, 'deleteMateria']);
+Route::delete('/materia/delete/{id}', [MateriaController::class, 'deleteMateria'])->name('delete_materia');
 
 Route::get('/pesquisarAluno', [AlunoController::class, 'pesquisaAluno_form']);
 Route::post('/pesquisarAluno', [AlunoController::class, 'pesquisaAluno']);
