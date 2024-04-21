@@ -7,7 +7,7 @@ Usando suas tabelas já criadas no projeto "Banco-de-Dados-MySQL---Apresentacao-
 - Atualizar informações dos cursos;
 - Deletar Matérias;
 
-Todas a tabelas, relacionamentos e comandos acima foram desenvolvidos no framework Laravel
+Todas a tabelas, relacionamentos e comandos acima foram desenvolvidos no framework Laravel. A partir delas, serao criados os testes (TDD) para a criação das funções acima.
 
 ### Acessos ao Projeto 
 
