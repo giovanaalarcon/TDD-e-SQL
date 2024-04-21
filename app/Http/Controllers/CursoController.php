@@ -67,7 +67,7 @@ class CursoController extends Controller
 
         $curso->save();
 
-        return back()->with('msg', 'Informacoes do curso atualizados com sucesso!');
+        return redirect()->back()->with('msg', 'Informacoes do curso atualizados com sucesso!');
     }
 
 }

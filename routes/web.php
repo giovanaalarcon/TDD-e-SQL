@@ -23,7 +23,6 @@ Route::get('/', [CursoController::class, 'index']);
 Route::get('/curso/{curso}', [CursoController::class, 'show']);
 
 //Rota para editar informacoes de Curso
-Route::get('curso/editar/{curso}', [CursoController::class, 'formEditCurso'])->name('curso.edit');
 Route::put('curso/edit/{curso}', [CursoController::class, 'edit'])->name('curso.edit.do');
 
 //Rota para deletar
