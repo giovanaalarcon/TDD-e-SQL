@@ -22,13 +22,11 @@ class MateriaController extends Controller
     |
     */
 
-    public function show($id){
-
-        public function show(Materia $materia){
-            $curso = $materia->curso()->first();
-            return view('', compact('curso', 'materia'));
-        }
+    public function show(Materia $materia){
+        $curso = $materia->curso()->first();
+        return view('', compact('curso', 'materia'));
     }
+
 
     /*
     |--------------------------------------------------------------------------
@@ -40,10 +38,17 @@ class MateriaController extends Controller
     */
     public function deleteMateria($id){
 
-        $materia = Materia::where('id', $id)->first();
-    
-        $materia->delete();
-        
-        return redirect()->back()->with('del', 'Materia deletada com sucesso!');
+        // Buscar a matéria pelo ID e verificar se ela existe
+        $materia = Materia::find($id);
+
+        if ($materia) {
+            // Se a matéria existir, tente excluí-la
+            $materia->delete();
+            return redirect()->back()->with('del', 'Matéria deletada com sucesso!');
+        } else {
+            // Se a matéria não for encontrada, retorne com uma mensagem apropriada
+            return redirect()->back()->with('del', 'Matéria não encontrada.');
+        }
     }
+
 }
