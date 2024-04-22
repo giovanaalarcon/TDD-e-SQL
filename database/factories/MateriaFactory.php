@@ -22,6 +22,13 @@ class MateriaFactory extends Factory
 
     public function definition()
     {
+        $curso = \App\Models\Curso::inRandomOrder()->first();
+        $professor = \App\Models\Professor::inRandomOrder()->first();
+
+        if (!$professor) {
+            $professor = \App\Models\Professor::factory()->create(['curso_id' => $curso->id]);
+        }
+        
         return [
             'codigo' => $this->faker->unique()->bothify('COD###'),
             'nome' => $this->faker->word,
